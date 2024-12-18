@@ -46,7 +46,7 @@ def plot_moving_average(window_size):
     for col in columns:
         if checkbox_states[col].get():
             ax.plot(df['Дата'], df[col], label=f'{col} (значения)')
-        if checkbox_avg_states[col].get():  # Проверка, включен ли флажок для скользящего среднего
+        if checkbox_avg_states[col].get():
             df[f'Скользящее Среднее ({col})'] = df[col].rolling(window=window_size).mean()
             ax.plot(df['Дата'], df[f'Скользящее Среднее ({col})'],
                     label=f'Скользящее Среднее {col} (окно={window_size})', linewidth=2)
